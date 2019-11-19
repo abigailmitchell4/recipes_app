@@ -1,0 +1,8 @@
+<h1>Edit Recipe</h1>
+
+<%= render "form", recipe: @recipe %>
+
+<br/>
+
+<%= link_to "Back", recipes_path, class:"btn-flat"%>
+<%= link_to "View Recipe", recipe_path(@recipe), class:"btn-flat" %>

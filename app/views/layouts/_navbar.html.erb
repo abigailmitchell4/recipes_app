@@ -1,0 +1,23 @@
+<nav>
+    <div class="nav-wrapper gold logo-padding">
+      <%= link_to "Yum Recipes", root_path, class: "brand-logo gold logo-padding"%>
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down gold">
+        <% if current_user %>
+          <li>
+            <a <%= link_to "Recipes", recipes_path %></a>
+          </li>
+          <li>
+            <a <%= link_to "Log Out", destroy_user_session_path, method: :delete %></a>
+          </li>
+        <% else %>
+          <li>
+            <a <%= link_to "Register", new_user_registration_path %></a>
+          </li>
+          <li>
+            <a <%= link_to "Log In", new_user_session_path %></a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>

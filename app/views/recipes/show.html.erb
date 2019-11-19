@@ -1,0 +1,17 @@
+<h3><%= @recipe.name %></h3>
+  <p>Category: <%=@recipe.category %></p>
+  <p>Prep Time: <%=@recipe.prep_time %> min</p>
+  <p>Ingredients: <%=@recipe.ingredients %> </p>
+  <p>Instructions: <%=@recipe.instructions %> </p>
+<hr />
+<h4>Notes</h4>
+  <% @recipe.notes.each do |note| %>
+    <%= render 'notes/note', { note: note } %>
+  <% end %>
+
+  <div >
+    <%= link_to 'Add Note', new_recipe_note_path(@recipe), class:"waves-light btn green-color waves-effect" %>
+    <%= link_to 'Edit Recipe', edit_recipe_path(@recipe), class:"waves-light btn green-color waves-effect" %>
+    <%= link_to 'Delete Recipe', @recipe, method: :delete, class:"waves-light btn green-color waves-effect" %>
+    <%= link_to 'Back To All Recipes', recipes_path, class:"waves-light btn green-color waves-effect" %>
+  </div>

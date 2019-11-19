@@ -1,0 +1,23 @@
+<%= form_with(model: @recipe, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category, required: true, placeholder: "Category" %>
+  </div>
+  <div class="field">
+    <%= f.label :prep_time %>
+    <%= f.number_field :prep_time, min: 0 %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredients %>
+    <%= f.text_field :ingredients, required: true, placeholder: "Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions, required: true, placeholder: "Name" %>
+  </div>
+  <%= f.submit class:"waves-effect waves-light btn" %>
+<% end %>
